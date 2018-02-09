@@ -2,29 +2,7 @@
 for a
 do	
 	echo "   " >> Packages
-	echo "The Repo automator by $a"
-	echo "type in the name for the tweak :"
-	read -p "Name for the Tweak : " name
-	read -p "Version of Tweak : " version
-	read -p "Section in the Repo : " Section
-	read -p "The Maintainer : " maint
-	read -p "Firmware [example <9.3.5] : " depen
-	read -p "Description : " desc
-	read -p "Depiction [just if you have one] : " dep
-	echo "generating Packages Paragraph..."
-	echo "Packages --------------------------------------------------"
-	echo "Package: $name" && echo "Package: $name" >> Packages
-	echo "Version: $version" && echo "Version: $version" >> Packages
-	echo "Section: $Section" && echo "Section: $Section" >> Packages
-	echo "Maintainer: $maint" && echo "Maintainer: $maint" >> Packages
-	echo "Depends: $depen" && echo "Depends: $depen" >> Packages
-	echo "Architecture: iphoneos-arm" && echo "Architecture: iphoneos-arm" >> Packages
-	echo "Filename ./$1" && echo "Filename: ./$1" >> Packages
-	echo "Size: $(stat -f%z $a)" && echo "Size: $(stat -f%z $a)" >> Packages
-	echo "MD5sum: $(md5 -q $a)" && echo "MD5sum: $(md5 -q $a)" >> Packages
-	echo "Description: $desc" && echo "Description: $desc" >> Packages
-	echo "Name: $name" && echo "Name: $name" >> Packages
-	echo "Author: $maint" && echo "Author: $maint" >> Packages
+	echo"$(dpkg-scanpackages $a)" >> Packages
 	echo "   " >> Packages
 	bzip2 -v --best Packages
 done
