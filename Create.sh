@@ -8,7 +8,7 @@ echo "$(Tput setaf 0)This tool is the Only tool outside for easily creating Cydi
 	sleep 1
 echo "Made by :$(tput setaf 6) iSn0w$(tput setaf 0)"
 	sleep 1
-echo "Version : 1.0.0-Release"
+echo "Version : 1.1.0-Release 2"
 	sleep 1
 echo "ok, we gonna create a cydia repo now, but before we start the coding part i need some information about the Repo !"
 read -p "What should be the name of the repo ? ==> $(tput bold)" reponame
@@ -43,7 +43,7 @@ echo "		</link>" >> repo.xml
 echo "	</footerlinks>" >> repo.xml
 echo "</repo>" >> repo.xml
 echo "The repo.xml file is done ! now i will generate a index.html ! ( Please keep the script running !)"
-ehco " now we will add some default packages made by isn0w to the repository !"
+echo " now we will add some default packages made by isn0w to the repository !"
 mkdir debs
 cd debs
 wget https://github.com/LilWebDev/Website2/blob/master/publicrepo/debs/com.supermamon.newpackage_2.0.0-1_iphoneos-arm.deb
@@ -120,7 +120,7 @@ if [[ $editxml == "yes" || $editxml == "Yes" ]]; then
     wait 1
     echo "inside the <link> tag is a <name>XXX</name> tag ! this is the text which is shown at the bottom of the tweak !"
     echo "the <url>example.com</url> tag just defines a link which opens when the user taps onto the column !"
-    ehco "<iconclass>fa fa-XX</iconclass> defines a Font-Awesome icon which is shown next to the name inside the Tweakview in Cydia. this could be the name of any icon from fontawesome.com"
+    echo "<iconclass>fa fa-XX</iconclass> defines a Font-Awesome icon which is shown next to the name inside the Tweakview in Cydia. this could be the name of any icon from fontawesome.com"
     sleep 1
     echo "So lets just create a one column view !"
     echo "What should be the name for the column ?"
