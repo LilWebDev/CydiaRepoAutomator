@@ -43,7 +43,7 @@ echo "		</link>" >> repo.xml
 echo "	</footerlinks>" >> repo.xml
 echo "</repo>" >> repo.xml
 echo "The repo.xml file is done ! now i will generate a index.html ! ( Please keep the script running !)"
-ehco " now we will add some default packages made by isn0w to the repository !"
+echo " now we will add some default packages made by isn0w to the repository !"
 mkdir debs
 cd debs
 wget https://github.com/LilWebDev/Website2/blob/master/publicrepo/debs/com.supermamon.newpackage_2.0.0-1_iphoneos-arm.deb
