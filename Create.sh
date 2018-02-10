@@ -94,8 +94,8 @@ clear
 echo "$(tput setaf 2)========> Repo Creator Part 3 ( Packages.bz2 )! \n"
 echo "$(tput sgr0) So Now lets take a look at the Repo.xml file which is shown in every repo at the very bottom !"
 read -p "$(tput bold) editxml
-if [[ $editxml == "yes" || $editxml == "Yes ]]; then
-	echo "$(tput setaf 2)========> Repo Creator Part 3 ( edit the repo.xml )! \n"
+if [[ $editxml == "yes" || $editxml == "Yes" ]]; then
+	echo "========> Repo Creator Part 3 , edit the repo.xml! \n"
 	rm -f repo.xml
 	echo "$(tput sgr0)ok now we gonna edit the repo.xml file !\n"
 	echo "ok a normal repo.xml file looks like this : \n"
@@ -115,8 +115,36 @@ if [[ $editxml == "yes" || $editxml == "Yes ]]; then
 	echo "</repo>" 
 	sleep 1
 	echo "ok, now i gonna teach you the structure, which is pretty easy !"
-	return
-else 
-	echo "ok, so we gonna use the example repo.xml !"
-	return
+    clear
+    echo "So the <link> tag just defines a column at the bottom of each tweak"
+    wait 1
+    echo "inside the <link> tag is a <name>XXX</name> tag ! this is the text which is shown at the bottom of the tweak !"
+    echo "the <url>example.com</url> tag just defines a link which opens when the user taps onto the column !"
+    ehco "<iconclass>fa fa-XX</iconclass> defines a Font-Awesome icon which is shown next to the name inside the Tweakview in Cydia. this could be the name of any icon from fontawesome.com"
+    sleep 1
+    echo "So lets just create a one column view !"
+    echo "What should be the name for the column ?"
+    read columnview
+    echo "adding..."
+    echo "ok !"
+    echo "<repo>" >> repo.xml
+    echo "    <footerlinks>" >> repo.xml
+    echo "        <link>" >> repo.xml
+    echo "             <name>$columnview</name>" >> repo.xml
+    echo "added !"
+    echo "now we need a URL for the column !"
+    read columnurl
+    echo "ok thats good...."
+    echo "              <URL>$columnurl</URL>" >> repo.xml
+    echo "added the url ! "
+    echo "now we will just add a fa fa- icon !"
+    read -p "Just type in 'fa fa-twitter' for example" faicon
+    echo "adding the fa icon"
+    echo "              <iconclass>$faicon</iconclass>" >> repo.xml
+    echo "ok the column view is done ! closing the remaining tags..."
+    echo "          </link>" >> repo.xml
+    echo "  </footerlinks" >> repo.xml
+    echo "</repo>" >> repo.xml
+    echo "ok this is done now !"
+fi
 echo "$(tput sgr0)"
