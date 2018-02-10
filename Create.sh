@@ -90,4 +90,33 @@ read -p "so well how you can see to create a cydia Repository isnt that hard ! w
 echo " \n \n \n"
 read -p " Ok some extra stuff for you : \n the file repo.xml will be shown at the bottom of each debian archive inside Cydia. the depencies which we have also setten up, are the description for every package, the changelog and could also be many other things ! if you have any problems or issues just contact me on reddit ! @LucaTheDev"
 echo "\n \n Tip: Learning iOS Objective C Development is the fundamental of iOS TweakDeveloping!"
+clear 
+echo "$(tput setaf 2)========> Repo Creator Part 3 ( Packages.bz2 )! \n"
+echo "$(tput sgr0) So Now lets take a look at the Repo.xml file which is shown in every repo at the very bottom !"
+read -p "$(tput bold) editxml
+if [[ $editxml == "yes" || $editxml == "Yes ]]; then
+	echo "$(tput setaf 2)========> Repo Creator Part 3 ( edit the repo.xml )! \n"
+	rm -f repo.xml
+	echo "$(tput sgr0)ok now we gonna edit the repo.xml file !\n"
+	echo "ok a normal repo.xml file looks like this : \n"
+	echo "<repo>" 
+	echo "	<footerlinks>"
+	echo "		<link>"	
+	echo "			<name>iSn0w</name>" 
+	echo "			<url>https://twitter.com/iSn0we</url>" 
+	echo "			<iconclass>fa fa-twitter</iconclass>"
+	echo "		</link>" 
+	echo "		<link>" 
+	echo "			<name>Edit this text too!</name>" 
+	echo " 			<url>paste a URL here</url>" 
+	echo "			<iconclass>fa fa-thumbs-up</iconclass>"
+	echo "		</link>" 
+	echo "	</footerlinks>" 
+	echo "</repo>" 
+	sleep 1
+	echo "ok, now i gonna teach you the structure, which is pretty easy !"
+	return
+else 
+	echo "ok, so we gonna use the example repo.xml !"
+	return
 echo "$(tput sgr0)"
