@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 clear
 rm -rf Repo
 mkdir Repo
